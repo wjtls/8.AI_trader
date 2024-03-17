@@ -7,13 +7,7 @@ import time
 import numpy as np
 import random
 import torch
-# cnfduswkemfdl djeltj aksed  gksqhdxnwk   3qhdwl  tlrdml ra
 
-#
-seed=1
-random.seed(seed)
-np.random.seed(seed)
-torch.manual_seed(seed)
 
 trading_site = 'binance'   #binance , upbit
 Binance_API_key ='My binance key'
@@ -21,9 +15,8 @@ Binance_Secret_key ='Secret key'
 Slack_token = "slack key"  # slack 토큰
 
 
-API_coin_name='ETH' #코인명
-API_data_name='ETH/USDT' # 바이낸스 API에서 불러올 이름####################################################
-
+API_coin_name=
+API_data_name=
 coin_or_stock='coin' # 불러올 데이터
 train_stock_or_future='future' # 학습방식
 
@@ -36,12 +29,12 @@ Agent_num=4 #에이전트 갯수
 batch_size=30
 Global_batch=5
 each_epoch=300000
-minute=401   #데이터의 분봉 ex) 3으로 설정하면 3분마다   311 학습됨
+minute=   #데이터의 분봉 ex) 3으로 설정하면 3분마다   311 학습됨
 ratio=[2,8,1]  #train,val,test set 비율 train과 val만 넣는다
 train_val_test='total'
 
-Neural_net = 'LSTM'  #'LSTM', Quantum
-bidirectional_ = True  #퀀텀이면   양방향 퀀텀LSTM이 됨
+Neural_net = '' 
+bidirectional_ = 
 device='cuda'  #cuda , cpu(Quantum은 cpu가 더빠름)
 
 
@@ -49,15 +42,12 @@ if device =='cuda':
     print(torch.cuda.is_available(),'쿠다 설정 확인')
 
 
-long_ind_name=['NNCO_up_L','NNCO_down_L','CCI_trend','CCI_trend2','tanos'] #롱 지표명
-short_ind_name=['NNCO_up_S','NNCO_down_S','CCI_trend','CCI_trend2','tanos'] #숏 지표명
+long_ind_name=[] #롱 지표명
+short_ind_name=[] #숏 지표명
 
 
 input_dim={'short':len(short_ind_name),'long':len(long_ind_name)}  #Network input dim  숏과 롱의 dim을 dict로 넣는다
 short_or_long_data=['long']###########################################
-
-
-
 
 
 
@@ -72,14 +62,14 @@ time_diff=[] #yfinance의 시간조절 파라미터(자동설정되므로 건들
 
 
 
-PV_reward=False
-PV_reward_only=True
+PV_reward=
+PV_reward_only=
 
 #기능 참 거짓 설정 파라미터
-traj_print= False
-data_insert= False #api 데이터 실시간으로 인서트 할건지
-plot_print= True
-insert_yf_data= True # 실시간 데이터 인서트 허용
+traj_print= 
+data_insert=  #api 데이터 실시간으로 인서트 할건지
+plot_print= 
+insert_yf_data=  # 실시간 데이터 인서트 허용
 
 
 
@@ -100,8 +90,8 @@ coin_future_cost=0.002 #수수료 달러 (선물 계산시)
 stock_cost=0.001 # 설정값 계수0.001 = 0.1% (현물인경우)
 
 leverage = 1
-point_value= 1300 # 달러 가치  GC:100 ES:50 NQ:20 ES:50 FDX(Dax):25 Dow(YM):5
-deposit=1000000  # 증거금
+point_value=  # 달러 가치  GC:100 ES:50 NQ:20 ES:50 FDX(Dax):25 Dow(YM):5
+deposit=  # 증거금
 
 
 #실전 트레이딩
@@ -114,11 +104,11 @@ limit_unit=1 #최대 보유 리미트 유닛
 
 
 #learning rate4
-long_Global_actor_net_lr=3e-5##################################
+long_Global_actor_net_lr=
 long_PPO_actor_net_lr=0
 long_PPO_critic_net_lr=0
 
-short_Global_actor_net_lr=3e-5###############################
+short_Global_actor_net_lr=
 short_PPO_actor_net_lr= 0
 short_PPO_critic_net_lr= 0
 
@@ -131,20 +121,20 @@ if_real_time='True' # 실시간 데이터도 합쳐서 불러옴
 
 
 #APPO param
-k_epoch= 20
-window={'long':15, 'short':15}
-num_cuda=1
+k_epoch= 
+window=
+num_cuda=
 
 
-reward_bonus= 100    # 주식처럼 학습시
-long_reward_bonus=1000  # 선물처럼 학습시
-short_reward_bonus=1000
+reward_bonus=    # 주식처럼 학습시
+long_reward_bonus= # 선물처럼 학습시
+short_reward_bonus=
 
-policy_grad_clip=0.1
-value_grad_clip=0.1
+policy_grad_clip=
+value_grad_clip=
 
-long_reward_clip=1000000
-short_reward_clip=1000000
+long_reward_clip=
+short_reward_clip=
 
 
 
