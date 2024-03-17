@@ -43,9 +43,9 @@
     <img src="https://github.com/wjtls/AI_trader/assets/60399060/c4322ad6-4ac5-445b-a7b5-95e6c4955294" width="300"/>
     <figcaption>백테스트 로그</figcaption>
   </figure>
- 
+  
   <figure> 
-    ![image](https://github.com/wjtls/AI_trader/assets/60399060/c08a7041-1f53-413c-9ed0-1d9ede409aaf)
+    <img src="https://github.com/wjtls/AI_trader/assets/60399060/c08a7041-1f53-413c-9ed0-1d9ede409aaf" width="300"/>
     <figcaption>실전매매 로그</figcaption>
   </figure>
 
