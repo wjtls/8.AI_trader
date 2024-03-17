@@ -49,28 +49,6 @@ Env=Env_.Env
 
 #--------------------------------------------------------------------------------------
 #공용
-class PositionalEncoding(nn.Module):
-    def __init__(self, d_model, max_len=5000):
-        super().__init__()
-
-        # positional encoding을 위한 변수들을 초기화합니다.
-        max_len = int(max_len)
-        pe = torch.zeros(max_len, d_model)
-        position = torch.arange(0, max_len, dtype=torch.float).unsqueeze(1)
-        div_term = torch.exp(torch.arange(0, d_model, 2).float() * (-math.log(10000.0) / d_model))
-
-        # positional encoding 값을 계산합니다.
-        pe[:, 0::2] = torch.sin(position * div_term)
-        pe[:, 1::2] = torch.cos(position * div_term)
-
-        # positional encoding을 텐서로 변환하고 모델의 버퍼로 등록합니다.
-        pe = pe.unsqueeze(0)
-        self.register_buffer('pe', pe)
-
-    def forward(self, x):
-        # 입력에 positional encoding 값을 더해줍니다.
-        x = x + self.pe[:x.size(0), :]
-        return x
 
 
 class Global_share_adam(torch.optim.Adam):
@@ -93,7 +71,6 @@ class Global_share_adam(torch.optim.Adam):
 
 #-------------------------------------------------------------------------------------------
 #강화학습 + 양자 강화학습
-
 
 
 class PPO_critic(tq.QuantumModule,nn.Module):
