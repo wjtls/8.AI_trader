@@ -1,7 +1,7 @@
 # AI_trader
 
 
-대상 : 코인 (선물, 현물) 
+대상 : 코인 (현물, 선물) 
 
  <br>
  <br>
@@ -11,7 +11,8 @@
 1. Asynchronous PPO 알고리즘 및 학습
 2. AI 백테스트 환경
 3. 실전 트레이딩(Binance API 사용)
-4. 매매 slack 메세지 전송
+4. 선물시 롱숏 분리
+5. 매매 slack 메세지 전송
 
 
  <br>
@@ -30,11 +31,20 @@
 <br>
 <br>
 <br>
-
+<figure>
+  <img src="https://github.com/wjtls/AI_trader/assets/60399060/80e3b619-78df-4d7a-b865-cc7d210e623f" alt="참고 이미지" width="300">
+  <figcaption>이미지 제목</figcaption>
+</figure>
 참고 이미지  <br>
 <p>
-  <img src="https://github.com/wjtls/AI_trader/assets/60399060/80e3b619-78df-4d7a-b865-cc7d210e623f" width="300"/>
-  <img src="https://github.com/wjtls/AI_trader/assets/60399060/c4322ad6-4ac5-445b-a7b5-95e6c4955294" width="300"/>
+  <figure> 
+    <img src="https://github.com/wjtls/AI_trader/assets/60399060/80e3b619-78df-4d7a-b865-cc7d210e623f" alt='참고' width="300"/>
+    <figcaption>이미지 제목</figcaption>
+  </figure>
+  <figure> 
+    <img src="https://github.com/wjtls/AI_trader/assets/60399060/c4322ad6-4ac5-445b-a7b5-95e6c4955294" width="300"/>
+    <figcaption>이미지 제목2</figcaption>
+  </figure>
 </p>
 <br>
 - 코인 ETH 선물 백테스팅 (201분봉) <br>
