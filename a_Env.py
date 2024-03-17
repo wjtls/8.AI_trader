@@ -150,7 +150,7 @@ class Env:
         data = []
 
 
-                        '데이터 호출 부분'
+                        '주식, 코인 데이터 호출 부분'
 
         data_set = pd.DataFrame(df).reset_index()
         data_set = self.coin_total_time_Frame(data_set.values.tolist(), minute, data_set.columns)
