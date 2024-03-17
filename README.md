@@ -47,7 +47,7 @@
 </p>
 <br>
   <figure> 
-    <img src="https://github.com/wjtls/AI_trader/assets/60399060/c08a7041-1f53-413c-9ed0-1d9ede409aaf" width="300"/>
+    <img src="https://github.com/wjtls/AI_trader/assets/60399060/c08a7041-1f53-413c-9ed0-1d9ede409aaf" width="600"/>
     <figcaption>실전매매 로그</figcaption>
   </figure>
   
