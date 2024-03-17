@@ -49,8 +49,8 @@ if device =='cuda':
     print(torch.cuda.is_available(),'쿠다 설정 확인')
 
 
-long_ind_name=['NNCO_up_L','NNCO_down_L','CCI_trend','CCI_trend2','tanos']
-short_ind_name=['NNCO_up_S','NNCO_down_S','CCI_trend','CCI_trend2','tanos']
+long_ind_name=['NNCO_up_L','NNCO_down_L','CCI_trend','CCI_trend2','tanos'] #롱 지표명
+short_ind_name=['NNCO_up_S','NNCO_down_S','CCI_trend','CCI_trend2','tanos'] #숏 지표명
 
 
 input_dim={'short':len(short_ind_name),'long':len(long_ind_name)}  #Network input dim  숏과 롱의 dim을 dict로 넣는다
