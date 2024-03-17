@@ -34,7 +34,7 @@
 참고 이미지  <br>
 <p>
   <img src="https://github.com/wjtls/AI_trader/assets/60399060/80e3b619-78df-4d7a-b865-cc7d210e623f" width="300"/>
-  <img src="https://github.com/wjtls/AI_trader/assets/60399060/80e3b619-78df-4d7a-b865-cc7d210e623f" width="300"/>
+  <img src="https://github.com/wjtls/AI_trader/assets/60399060/c4322ad6-4ac5-445b-a7b5-95e6c4955294" width="300"/>
 </p>
 <br>
 - 코인 ETH 선물 백테스팅 (201분봉) <br>
