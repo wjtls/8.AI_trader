@@ -1,17 +1,11 @@
-import c_PPO_Agent as PA
 import numpy as np
 import torch
 import b_network as NET
 import e_train as et
 
-PPO=PA.PPO
 
 import random
 import torch
-seed=1
-random.seed(seed)
-np.random.seed(seed)
-torch.manual_seed(seed)
 
 
 if torch.cuda.is_available():
