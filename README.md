@@ -1,11 +1,12 @@
 # AI_trader
 
 
-대상
-코인 선물, 현물 
+대상 : 코인 선물, 현물 
 
 
 구성
 1. Asynchronous PPO 알고리즘 및 학습
 2. AI 백테스트 환경
 3. 실전 트레이딩(Binance API 사용)
+4. 매매 slack 메세지 전송
+
