@@ -1,14 +1,12 @@
 # 네트워크 클래스들
 
 
-#정규화 및 전처리 계산
 
 
 #시각화및 저장,계산
 import copy
 import os
 import numpy as np
-# 시각화및 저장,계산
 import os
 import math
 import numpy as np
@@ -17,20 +15,11 @@ import torch.nn as nn
 import torch.optim as optim
 import b_Quantum_LSTM_net as QLSTM_ # 퀀텀 LSTM
 import a_Env as Env_
-
-# 정규화 및 전처리 계산
-
-#API및 데이터 불러오기
-
-#크롤링
-
 from torch.nn import TransformerEncoder, TransformerEncoderLayer
-
 import random
 import torch
 import random
 import torch
-
 import torchquantum as tq
 
 
@@ -70,7 +59,7 @@ class Global_share_adam(torch.optim.Adam):
 
 
 #-------------------------------------------------------------------------------------------
-#강화학습 + 양자 강화학습
+#강화학습 + 양자 강화학습(Quantum 설정시)
 
 
 class PPO_critic(tq.QuantumModule,nn.Module):
@@ -315,28 +304,6 @@ class PPO_actor(tq.QuantumModule,nn.Module):
             v = self.Linear(p[:, -1, :])
 
         if self.Neural_net == 'Quantum':
-
-            '''''
-            # bsz = x.shape[0]
-            # x = F.avg_pool2d(x, 6).view(bsz, 16)
-
-            use_qiskit = False
-
-            if use_qiskit:
-                x = self.qiskit_processor.process_parameterized(self.q_device, self.encoder, self.q_layer, self.measure,
-                                                                x)
-            else:
-                x,_=self.LSTM(input_)
-                xsize = x[:,-1,:].size()[0]
-
-                x_data = torch.zeros(xsize,self.hidden*2)  # LSTM 스텝 수에 맞게 출력 텐서 생성
-                for i in range(xsize):
-                    x_sample = x[i, -1, :].unsqueeze(0)
-                    self.encoder(self.q_device, x_sample)
-                    self.Net(self.q_device)
-                    x_data[i, :] = self.measure(self.q_device)  # 각 샘플에 대해 277스탭의 폴리시 측정
-                v = self.Linear(x_data.to(self.device))
-            '''''
             p, _ = self.Net(input_)
             v = self.Linear(p[:, -1, :])
         return v
