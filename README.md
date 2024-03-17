@@ -32,7 +32,7 @@
 <br>
 
 참고 이미지  <br>
-![image](https://github.com/wjtls/AI_trader/assets/60399060/80e3b619-78df-4d7a-b865-cc7d210e623f)  <br> 
+!<img src="https://github.com/wjtls/AI_trader/assets/60399060/80e3b619-78df-4d7a-b865-cc7d210e623f" width="300"/> <br> 
 - 코인 ETH 선물 백테스팅 (201분봉) 
 - 2022-01-01 00:00 ~ 2024-03-05 23:41 
 - 31.5399169921875 % : 시장 수익률
