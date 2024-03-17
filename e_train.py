@@ -16,9 +16,9 @@ np.random.seed(seed)
 torch.manual_seed(seed)
 
 trading_site = 'binance'   #binance , upbit
-Binance_API_key ='UbZY1VhFGcMulvGLCx6VDshTL1UwggdGO2iowDodyJBBMbXF3isx69zLAszLRdug'
-Binance_Secret_key ='C3QO3OfWQxs60G2GuGDXcZXJa6IODle7nlMlqsfH1kGNCAuzBBPUcmRdkFmmOyOT'
-Slack_token = "xoxb-1993298947696-1969711720387-IDVzzsoczfBuyW34aHIyNZtP"  # slack 토큰
+Binance_API_key ='My binance key'
+Binance_Secret_key ='Secret key'
+Slack_token = "slack key"  # slack 토큰
 
 
 API_coin_name='ETH' #코인명
