@@ -106,19 +106,6 @@ class PPO(nn.Module, Env):
         self.date_data=date_data[self.window-1:] # 백테스팅때 사용
 
 
-        
-        '''''
-        확인함수
-        pd.set_option('display.max_columns', None)  # 모든열 출력
-        pd.set_option('display.max_row', None)  # 모든행 출력
-
-        a=pd.DataFrame(self.price_data)
-        b=pd.DataFrame(self.date_data)
-        d=pd.DataFrame(self.scale_input[0][self.window-1:])
-        c=pd.concat([a,b,d],axis=1)
-        print(c)
-        print(len(a),len(b),len(d))
-        '''''
 
         self.cash = cash  # 가진 현금
         self.cost = cost  # 수수료 비용
@@ -555,14 +542,7 @@ class PPO(nn.Module, Env):
 
 
     def share_grad(self,Global_net,local_net):
-        for para,share_para in zip(Global_net.parameters(),local_net.parameters()):
-            if share_para.grad is not None:
-                if self.device=='cpu':
-                    para._grad =share_para.grad.to(para.device)
-                else:
-                    para._grad = share_para.grad.detach().cpu().clone()
-            else:
-                pass
+        '그래디언트 공유'
 
 
 
@@ -697,8 +677,6 @@ class PPO(nn.Module, Env):
         plt.plot(reward_data)
         plt.title('total reward')
 
-        # old는 에피소드돌릴때 폴리시(실제했던확률)- 즉 액션할때 했던 폴리시
-        # . new는 학습할때 새로뽑은 폴리시
 
 
 #######################################################################################################################################
