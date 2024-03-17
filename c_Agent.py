@@ -20,29 +20,21 @@ import a_Env as Env_
 import b_network as NET
 import pandas as pd
 
-#######################################################################################################################################
-Env=Env_.Env
-PPO_actor=NET.PPO_actor
-PPO_critic=NET.PPO_critic
-Global_actor=NET.Global_actor
-Global_critic=NET.Global_critic
+
+
+
+
 
 from collections import defaultdict
 import random
 import torch
-seed=1
-random.seed(seed)
-np.random.seed(seed)
-torch.manual_seed(seed)
-
-
 
 if torch.cuda.is_available():
     torch.cuda.manual_seed(seed)
     torch.cuda.manual_seed_all(seed)
 
 
-class PPO(nn.Module, Env):
+class Agent_(nn.Module, Env):
     '''''
     -Additional skills 
 
@@ -196,7 +188,7 @@ class PPO(nn.Module, Env):
         self.short_price = []  # 매수했던 가격*계약수
         self.short_aver_price = 0
 
-
+    ###############슬리피지, 수수료 고려한 policy 기반의 액션, 수량 선택######################
 
     def SC_decide_action(self, policy):  #discrete decide action  stock이나 코인일때
 
@@ -527,8 +519,9 @@ class PPO(nn.Module, Env):
             policy_loss.backward(retain_graph=True)
             value_loss.backward(retain_graph=True)
 
-            torch.nn.utils.clip_grad_norm_(value_net.parameters(), params.value_grad_clip)
+            torch.nn.utils.clip_grad_norm_(value_net.parameters(), params.value_grad_clip) #그래디언트 클리핑
             torch.nn.utils.clip_grad_norm_(policy_net.parameters(), params.policy_grad_clip)
+            
             self.share_grad(Global_policy_net, policy_net)  # Global update : policy 가중치를 Global로
             self.share_grad(Global_value_net, value_net)
 
@@ -547,7 +540,7 @@ class PPO(nn.Module, Env):
 
 
     def each_train(self, epoch, global_batch,global_steps,start_event):  # 글로벌 배치: 몇번 학습후 업데이트 할것인지
-        #start_event.wait()  # 이벤트 설정까지 대기
+        #start_event.wait()  # 멀티프로세싱 이벤트 설정까지 대기
         self.back_testing = False
         Global_policy_net = self.Global_actor  # each train 마다 갱신 x 외부에서 불러온 하나의 Global net임
         Global_value_net = self.Global_critic
