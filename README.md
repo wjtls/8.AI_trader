@@ -44,12 +44,13 @@
     <figcaption>백테스트 로그</figcaption>
   </figure>
   
+</p>
+<br>
   <figure> 
     <img src="https://github.com/wjtls/AI_trader/assets/60399060/c08a7041-1f53-413c-9ed0-1d9ede409aaf" width="300"/>
     <figcaption>실전매매 로그</figcaption>
   </figure>
-
-</p>
+  
 <br>
 - 코인 ETH 선물 백테스팅 (201분봉) <br>
 - 2022-01-01 00:00 ~ 2024-03-05 23:41 <br>
