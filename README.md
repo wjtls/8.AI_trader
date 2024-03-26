@@ -71,8 +71,9 @@ AI를 사용한 알고리즘 트레이딩 (해외선물, 주식, 코인 현물, 
 <br>
 실거래 3개월 PV +22%
 <br>
+
 <figure>
-  <img src="https://github.com/wjtls/8.AI_trader/assets/60399060/540f5cf9-1460-4799-99e9-ffb10a1e8bfa" width="300" height='300'/>
+  <img src="https://github.com/wjtls/8.AI_trader/assets/60399060/d54b9054-8ebf-43af-ae02-450228668873" width="300" height='300'/>
   <figcaption>실전매매 로그</figcaption>
 </figure>
 
